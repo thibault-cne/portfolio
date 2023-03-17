@@ -1,0 +1,81 @@
+<template>
+  <nav class="sm:px-16 px-6 w-full flex items-center fixed top-0 z-20 py-4">
+    <div class="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <a href="#hero" class="flex items-center gap-2" @click="setActive('')">
+        <img :src="logo" alt="logo" />
+        <p class="text-primary text-[36px] font-bold cursor-pointer">
+          Thibault
+        </p>
+      </a>
+
+      <ul class="list-none hidden sm:flex flex-row gap-10">
+        <li
+          v-for="link in navLinks"
+          class="hover:text-primary text-[18px] font-medium cursor-pointer"
+          :class="[
+            active === link.name ? 'text-secondary' : 'text-base-content',
+          ]"
+          @click="setActive(link.name)"
+        >
+          <a :href="'#' + link.id">{{ link.name }}</a>
+        </li>
+      </ul>
+
+      <div class="sm:hidden flex flex-1 justify-end items-center">
+        <img
+          :src="toggle ? close : menu"
+          alt="Burger icon"
+          class="w-[28px] h-[28px] object-contain"
+          @click="toggleMenu"
+        />
+
+        <div :class="[toggle ? 'flex' : 'hidden']" class="absolute top-20 z-10">
+          <ul
+            class="list-none flex flex-col gap-4 justify-end items-start flex-1"
+          >
+            <li
+              v-for="link in navLinks"
+              class="hover:text-primary text-[18px] font-medium cursor-pointer"
+              :class="[
+                active === link.name ? 'text-secondary' : 'text-base-content',
+              ]"
+              @click="setActive(link.name)"
+            >
+              <a :href="'#' + link.id">{{ link.name }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import { navLinks } from "../constants";
+import { logo, menu, close } from "../assets";
+
+export default defineComponent({
+  name: "Navbar",
+  data() {
+    return {
+      active: "",
+      logo: logo,
+      navLinks: navLinks,
+      toggle: false,
+      menu: menu,
+      close: close,
+    };
+  },
+  methods: {
+    setActive(active: string) {
+      this.active = active;
+    },
+    toggleMenu() {
+      this.toggle = !this.toggle;
+    },
+  },
+});
+</script>
+
+<style scoped lang="scss"></style>

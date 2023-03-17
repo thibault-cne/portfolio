@@ -1,0 +1,66 @@
+<template>
+  <div class="w-full h-screen mt-[100px]">
+    <div
+      v-motion
+      :enter="{
+        y: -50,
+        opacity: 0,
+      }"
+      :visibleOnce="{
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: 100,
+        },
+      }"
+      class="w-full self-start"
+    >
+      <p
+        class="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider"
+      >
+        My works
+      </p>
+      <h2
+        class="text-primary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]"
+      >
+        Projects.
+      </h2>
+    </div>
+    <div class="mt-10 flex flex-col sm:flex-row sm:justify-evenly">
+      <Project
+        v-motion
+        :enter="{
+          opacity: 0,
+          x: -100,
+        }"
+        :visibleOnce="{
+          opacity: 1,
+          x: 0,
+          transition: {
+            delay: 200 + index * 100,
+          },
+        }"
+        v-for="(project, index) in projects"
+        :project="project"
+      />
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import Project from "./Project.vue";
+import { projects } from "../constants";
+
+export default defineComponent({
+  name: "Projects",
+  components: { Project },
+  data() {
+    return {
+      projects: projects,
+    };
+  },
+});
+</script>
+
+<style scoped lang="ts"></style>
