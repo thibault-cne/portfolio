@@ -15,9 +15,9 @@ cd portfolio
 
 You need to create a `.env` file to use the [@email/browser](https://www.emailjs.com/docs/sdk/installation/). You need to have the following variables :
 
-- VITE_TEMPLATE_ID
-- VITE_SERVICE_ID
-- VITE_PUBLIC_KEY
+- VITE_TEMPLATE_ID : your email browser template id
+- VITE_SERVICE_ID : your email browser service id
+- VITE_PUBLIC_KEY : your email browser public key
 
 You can now run a local server with :
 
