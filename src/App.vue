@@ -18,9 +18,10 @@ export default defineComponent({
       <Navbar />
       <Hero />
     </div>
-    <SectionWrapper :component="'Techs'" :id="'techs'" />
-    <SectionWrapper :component="'Projects'" :id="'projects'" />
-    <Contact />
+    <SectionWrapper component="About" id="about" />
+    <SectionWrapper component="Techs" id="techs" />
+    <SectionWrapper component="Projects" id="projects" />
+    <SectionWrapper component="Contact" id="contact" />
   </div>
 </template>
 
