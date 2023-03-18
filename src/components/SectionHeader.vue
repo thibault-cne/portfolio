@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import BounceAnimated from "./BounceAnimated.vue";
+import BounceAnimated from "./BounceAnimatedVisible.vue";
 
 export default defineComponent({
   name: "SectionHeader",

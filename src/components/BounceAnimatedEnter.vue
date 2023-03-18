@@ -6,7 +6,7 @@
       x: 50,
       y: 50,
     }"
-    :visibleOnce="{
+    :enter="{
       opacity: 1,
       x: 0,
       y: 0,
@@ -25,7 +25,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "BounceAnimated",
+  name: "BounceAnimatedEnter",
   props: {
     word: { required: true, type: String },
     delay: { required: false, type: Number },

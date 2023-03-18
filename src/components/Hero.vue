@@ -37,9 +37,9 @@
         <h1
           class="lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 font-bold"
         >
-          <BounceAnimated word="Hi I'm" />
+          <BounceAnimatedEnter word="Hi I'm" />
           <p class="text-primary">
-            <BounceAnimated word="Thibault Cheneviere" :delay="200" />
+            <BounceAnimatedEnter word="Thibault Cheneviere" :delay="200" />
           </p>
         </h1>
         <p
@@ -70,11 +70,11 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import BounceAnimated from "./BounceAnimated.vue";
+import BounceAnimatedEnter from "./BounceAnimatedEnter.vue";
 
 export default defineComponent({
   name: "Hero",
-  components: { BounceAnimated },
+  components: { BounceAnimatedEnter },
 });
 </script>
 
