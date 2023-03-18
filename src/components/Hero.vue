@@ -5,7 +5,7 @@
       opacity: 0,
       x: -100,
     }"
-    :enter="{
+    :visibleOnce="{
       opacity: 1,
       x: 0,
       transition: {
@@ -18,8 +18,16 @@
     <div
       class="absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 sm:px-16 px-6"
     >
-      <div class="flex flex-col justify-center items-center mt-5">
-        <div className="w-5 h-5 rounded-full bg-primary"></div>
+      <div class="relative flex flex-col justify-center items-center mt-5">
+        <div
+          class="absolute -top-0.5 opacity-75 w-6 h-6 rounded-full bg-primary blur group-hover:animate-bounce-3d"
+        ></div>
+        <div
+          className="w-5 h-5 rounded-full bg-primary  group-hover:animate-bounce-3d"
+        ></div>
+        <div
+          class="absolute px-2 opacity-75 blur w-1 sm:h-80 h-40 bg-gradient-to-b from-primary to-base-100"
+        ></div>
         <div
           className="w-1 sm:h-80 h-40 bg-gradient-to-b from-primary to-base-100"
         ></div>
@@ -29,12 +37,15 @@
         <h1
           class="lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 font-bold"
         >
-          Hi I'm <span class="text-primary">Thibault</span>
+          <Bounce word="Hi I'm" />
+          <p class="text-primary">
+            <Bounce word="Thibault" />
+          </p>
         </h1>
         <p
           class="mt-2 font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]"
         >
-          I'm an computer science student currently at TELECOM Nancy studying
+          I'm a computer science student currently at TELECOM Nancy studying
           Internet System and Security (ISS).
         </p>
       </div>
@@ -43,7 +54,7 @@
     <div class="absolute bottom-10 w-full flex justify-center items-center">
       <a
         class="no-animation animate-bounce rounded-full w-14 h-14 bg-base-300 flex justify-center items-center"
-        href="#techs"
+        href="#about"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -59,9 +70,11 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Bounce from "./Bounce.vue";
 
 export default defineComponent({
   name: "Hero",
+  components: { Bounce },
 });
 </script>
 

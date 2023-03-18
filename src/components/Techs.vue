@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen mt-[100px]">
+  <div class="w-full mt-[100px]">
     <div
       v-motion
       :enter="{
@@ -15,16 +15,7 @@
       }"
       class="w-full self-start"
     >
-      <p
-        class="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider"
-      >
-        Technologies I use
-      </p>
-      <h2
-        class="text-primary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]"
-      >
-        Techs.
-      </h2>
+      <SectionHeader title="Tech." subtitle="Technologies I use" />
     </div>
     <div class="flex flex-col gap-4 justify-center items-center mt-[100px]">
       <div
@@ -56,9 +47,11 @@
 import { defineComponent } from "vue";
 import { techs } from "../constants";
 import { textVariant, slideIn } from "../utils/motion";
+import SectionHeader from "./SectionHeader.vue";
 
 export default defineComponent({
   name: "Techs",
+  components: { SectionHeader },
   mounted() {
     setTimeout(() => {
       this.display = true;
