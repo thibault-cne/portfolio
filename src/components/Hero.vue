@@ -39,13 +39,13 @@
         >
           <Bounce word="Hi I'm" />
           <p class="text-primary">
-            <Bounce word="Thibault" :delay="200" />
+            <Bounce word="Thibault Cheneviere" :delay="200" />
           </p>
         </h1>
         <p
           class="mt-2 font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]"
         >
-          I'm a computer science student currently at TELECOM Nancy studying
+          a computer science student currently at TELECOM Nancy studying
           Internet System and Security (ISS).
         </p>
       </div>
