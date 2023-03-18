@@ -3,8 +3,8 @@
     v-motion
     :enter="{
       opacity: 0,
-      x: -50,
-      y: -50,
+      x: 50,
+      y: 50,
     }"
     :visibleOnce="{
       opacity: 1,
