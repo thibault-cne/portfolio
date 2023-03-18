@@ -17,7 +17,9 @@
     >
       <SectionHeader title="Projects." subtitle="My work" />
     </div>
-    <div class="mt-10 flex flex-col sm:flex-row sm:justify-evenly items-start">
+    <div
+      class="mt-10 flex flex-col sm:flex-row sm:justify-evenly items-center sm:items-start"
+    >
       <Project
         v-motion
         :enter="{

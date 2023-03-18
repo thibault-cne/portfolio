@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-72 sm:w-96 group">
+  <div class="relative w-72 sm:w-96 group mt-10 sm:mt-0">
     <div
       class="w-full h-full absolute bg-gradient-to-r from-secondary to-primary blur opacity-75 rounded-2xl group-hover:opacity-100 transition duration-1000 group-hover:duration-200 group-hover:scale-110"
     ></div>

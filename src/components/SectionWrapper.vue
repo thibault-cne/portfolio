@@ -1,6 +1,6 @@
 <template>
   <section
-    class="max-w-7xl mx-auto relative z-0 sm:px-16 px-6 sm:py-16 py-10 w-full h-screen"
+    class="max-w-7xl mx-auto relative z-0 sm:px-16 px-6 sm:py-16 py-10 w-full min-h-screen"
   >
     <span :id="id">&nbsp;</span>
     <component :is="component"></component>
