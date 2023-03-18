@@ -3,26 +3,33 @@ import {
   typescript,
   html,
   css,
-  reactjs,
-  redux,
+  vue,
+  kubernetes,
   tailwind,
-  nodejs,
-  mongodb,
   git,
-  figma,
+  rust,
+  go,
+  python,
+  java,
+  c,
   docker,
-  threejs,
-  portfolio,
+  casino,
+  ftc,
+  flutter,
 } from "../assets";
 
 export const navLinks = [
   {
-    name: "Contact",
-    id: "contact",
+    name: "Techs",
+    id: "techs",
   },
   {
     name: "Projects",
     id: "projects",
+  },
+  {
+    name: "Contact",
+    id: "contact",
   },
 ];
 
@@ -44,71 +51,80 @@ export const techs = [
     icon: typescript,
   },
   {
-    name: "React JS",
-    icon: reactjs,
+    name: "Vue JS",
+    icon: vue,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "Kubernetes",
+    icon: kubernetes,
   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
     name: "git",
     icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
   },
   {
     name: "docker",
     icon: docker,
   },
+  {
+    name: "Rust",
+    icon: rust,
+  },
+  {
+    name: "Go",
+    icon: go,
+  },
+  {
+    name: "Python",
+    icon: python,
+  },
+  {
+    name: "Java",
+    icon: java,
+  },
+  {
+    name: "C",
+    icon: c,
+  },
+  {
+    name: "Flutter",
+    icon: flutter,
+  },
 ];
 
 export const projects = [
   {
-    name: "Portfolio",
-    description: "This portfolio website",
-    tags: [
-      { value: "Vue.js", color: "green-600" },
-      { value: "TypeScript", color: "blue-600" },
-      { value: "Tailwind CSS", color: "blue-600" },
-      { value: "docker", color: "blue-600" },
-      { value: "kubernetes", color: "blue-600" },
-      { value: "daisyUI", color: "blue-600" },
-    ],
-    link: "",
-    image: portfolio,
+    name: "Find the cat",
+    description: "An implementation of the find function in C",
+    tags: [{ value: "C", color: "border-blue-400" }],
+    github: {
+      invert: true,
+      link: "https://github.com/thibault-cne/find-the-cat",
+    },
+    image: ftc,
   },
   {
-    name: "Portfolio",
-    description: "This portfolio website",
+    name: "Casino website",
+    description:
+      "A casino website made with Vue.js and Golang. You can currently play roulette.",
     tags: [
-      { value: "Vue.js", color: "green-600" },
-      { value: "TypeScript", color: "blue-600" },
-      { value: "Tailwind CSS", color: "blue-600" },
-      { value: "docker", color: "blue-600" },
-      { value: "kubernetes", color: "blue-600" },
-      { value: "daisyUI", color: "blue-600" },
+      { value: "Vue.js", color: "border-green-600" },
+      { value: "TypeScript", color: "border-blue-600" },
+      { value: "Tailwind CSS", color: "border-blue-600" },
+      { value: "docker", color: "border-blue-600" },
+      { value: "kubernetes", color: "border-blue-600" },
+      { value: "daisyUI", color: "border-blue-600" },
+      { value: "Go", color: "border-blue-600" },
     ],
-    link: "",
-    image: portfolio,
+    github: {
+      invert: true,
+      link: "https://github.com/thibault-cne/casinoWebsite",
+    },
+    image: casino,
   },
 ];
 
@@ -121,6 +137,9 @@ export type Project = {
   name: string;
   description: string;
   tags: Tags[];
-  link: string;
+  github: {
+    invert: boolean;
+    link: string;
+  };
   image: string;
 };
