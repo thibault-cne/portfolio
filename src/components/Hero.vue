@@ -5,7 +5,7 @@
       opacity: 0,
       x: -100,
     }"
-    :enter="{
+    :visibleOnce="{
       opacity: 1,
       x: 0,
       transition: {

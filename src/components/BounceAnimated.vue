@@ -1,7 +1,7 @@
 <template>
   <span
     v-motion
-    :enter="{
+    :initial="{
       opacity: 0,
       x: 50,
       y: 50,
