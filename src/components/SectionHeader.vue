@@ -5,7 +5,7 @@
   <h2
     class="text-primary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]"
   >
-    <Bounce :word="title" />
+    <Bounce :word="title" :delay="200" />
   </h2>
 </template>
 

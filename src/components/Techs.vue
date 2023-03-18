@@ -46,7 +46,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { techs } from "../constants";
-import { textVariant, slideIn } from "../utils/motion";
 import SectionHeader from "./SectionHeader.vue";
 
 export default defineComponent({
@@ -64,12 +63,6 @@ export default defineComponent({
     };
   },
   methods: {
-    textVariant(delay: number) {
-      return textVariant(delay);
-    },
-    slideIn() {
-      return slideIn();
-    },
     splitTechs(numRows: number) {
       let rows = [];
 

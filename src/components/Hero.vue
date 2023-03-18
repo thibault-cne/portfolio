@@ -39,7 +39,7 @@
         >
           <Bounce word="Hi I'm" />
           <p class="text-primary">
-            <Bounce word="Thibault" />
+            <Bounce word="Thibault" :delay="200" />
           </p>
         </h1>
         <p
