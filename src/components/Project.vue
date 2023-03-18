@@ -1,27 +1,33 @@
 <template>
-  <div class="relative w-96 group">
+  <div class="relative w-72 sm:w-96 group">
     <div
-      class="scale-75 sm:scale-100 absolute bg-gradient-to-r from-secondary to-primary blur opacity-75 w-96 rounded-2xl h-full group-hover:opacity-100 transition duration-1000 group-hover:duration-200 group-hover:scale-110"
+      class="w-full h-full absolute bg-gradient-to-r from-secondary to-primary blur opacity-75 rounded-2xl group-hover:opacity-100 transition duration-1000 group-hover:duration-200 group-hover:scale-110"
     ></div>
     <div
-      class="scale-75 sm:scale-100 card w-96 bg-base-100 transition-transform duration-1000 group-hover:duration-200 group-hover:scale-105"
+      class="w-full card bg-base-100 transition-transform duration-1000 group-hover:duration-200 group-hover:scale-105"
     >
       <figure class="relative">
-        <a :href="project.link" class="absolute top-0 right-0 z-20 p-4">
-          <img :src="github" alt="github" class="w-[36px] h-[36px]" />
+        <a :href="project.github.link" class="absolute top-0 right-0 z-20 p-4">
+          <img
+            :src="github"
+            alt="github"
+            class="w-[36px] h-[36px]"
+            :class="project.github.invert ? 'invert' : 'invert-0'"
+          />
         </a>
         <img :src="project.image" :alt="project.name" />
       </figure>
       <div class="card-body">
         <h2 class="card-title text-primary font-bold text-2xl">
           {{ project.name }}
+          <!-- <div class="badge badge-secondary">NEW</div> -->
         </h2>
         <p class="text-base-content">{{ project.description }}</p>
         <div class="mt-4 flex flex-wrap gap-2">
           <p
             v-for="tag in project.tags"
-            class="text-[14px] border rounded-full p-1 text-center"
-            :class="'border-' + tag.color"
+            class="text-[14px] border rounded-full p-1 px-2 text-center grow-0"
+            :class="tag.color"
           >
             #{{ tag.value }}
           </p>

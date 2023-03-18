@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen mt-[100px]">
+  <div class="w-full mt-[100px]">
     <div
       v-motion
       :enter="{
@@ -15,18 +15,9 @@
       }"
       class="w-full self-start"
     >
-      <p
-        class="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider"
-      >
-        My works
-      </p>
-      <h2
-        class="text-primary font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]"
-      >
-        Projects.
-      </h2>
+      <SectionHeader title="Projects." subtitle="My work" />
     </div>
-    <div class="mt-10 flex flex-col sm:flex-row sm:justify-evenly">
+    <div class="mt-10 flex flex-col sm:flex-row sm:justify-evenly items-start">
       <Project
         v-motion
         :enter="{
@@ -51,10 +42,11 @@
 import { defineComponent } from "vue";
 import Project from "./Project.vue";
 import { projects } from "../constants";
+import SectionHeader from "./SectionHeader.vue";
 
 export default defineComponent({
   name: "Projects",
-  components: { Project },
+  components: { Project, SectionHeader },
   data() {
     return {
       projects: projects,
