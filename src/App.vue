@@ -18,10 +18,17 @@ export default defineComponent({
       <Navbar />
       <Hero />
     </div>
-    <SectionWrapper component="About" id="about" />
-    <SectionWrapper component="Techs" id="techs" />
-    <SectionWrapper component="Projects" id="projects" />
-    <SectionWrapper component="Contact" id="contact" />
+    <SectionWrapper component="About" id="about" h />
+    <SectionWrapper component="Techs" id="techs" h />
+    <SectionWrapper component="Projects" id="projects" h />
+    <div class="w-full min-h-screen relative">
+      <SectionWrapper component="Contact" id="contact" />
+      <footer
+        class="absolute bottom-0 footer footer-center p-4 bg-slate-700 text-base-content"
+      >
+        <div><p>Fait avec ♥ par Thibault.</p></div>
+      </footer>
+    </div>
   </div>
 </template>
 
