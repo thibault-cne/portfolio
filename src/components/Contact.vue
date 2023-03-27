@@ -165,6 +165,10 @@ export default defineComponent({
   },
   methods: {
     send() {
+      if (!this.check) {
+        return;
+      }
+
       const publicKey = `${import.meta.env.VITE_PUBLIC_KEY}`;
       const templateID = `${import.meta.env.VITE_TEMPLATE_ID}`;
       const serviceID = `${import.meta.env.VITE_SERVICE_ID}`;
@@ -179,12 +183,19 @@ export default defineComponent({
         .send(serviceID, templateID, data, publicKey)
         .then((r) => {
           if (r.status === 200) {
-            console.log("success");
+            // console.log("success");
           }
         })
         .catch(() => {
-          console.log("error");
+          // console.log("error");
         });
+    },
+    check(): boolean {
+      if (this.name === "" || this.mail === "" || this.message === "") {
+        return false;
+      }
+
+      return true;
     },
   },
 });
