@@ -36,7 +36,7 @@
           v-for="tech in row"
           :src="tech.icon"
           :alt="tech.name"
-          class="w-[60px] h-[60px] transition-transform sm:hover:scale-150"
+          class="w-[60px] h-[60px] transition-transform sm:hover:scale-150 cursor-pointer"
         />
       </div>
     </div>
