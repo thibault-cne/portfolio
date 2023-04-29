@@ -1,5 +1,11 @@
 <template>
-  <div class="w-full">
+  <div class="w-full relative">
+    <div
+      class="absolute p-10 transition-transform duration-150 ease-in-out right-0 z-10"
+      :class="[alert.display ? 'translate-x-0' : 'translate-x-[150%]']"
+    >
+      <Alert :msg="alert.msg" :type="alert.type" />
+    </div>
     <div
       v-motion
       :enter="{
@@ -138,6 +144,8 @@
               },
             }"
             class="btn btn-wide btn-primary"
+            :class="[sending ? 'disabled' : '']"
+            :disabled="sending"
             @click="send"
           >
             Submit
@@ -150,17 +158,24 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Alert from "./Alert.vue";
 import emailjs from "@emailjs/browser";
 import SectionHeader from "./SectionHeader.vue";
 
 export default defineComponent({
   name: "Contact",
-  components: { SectionHeader },
+  components: { SectionHeader, Alert },
   data() {
     return {
       name: "",
       mail: "",
       message: "",
+      sending: false,
+      alert: {
+        display: false,
+        msg: "",
+        type: "",
+      },
     };
   },
   methods: {
@@ -168,6 +183,8 @@ export default defineComponent({
       if (!this.check) {
         return;
       }
+
+      this.sending = true;
 
       const publicKey = `${import.meta.env.VITE_PUBLIC_KEY}`;
       const templateID = `${import.meta.env.VITE_TEMPLATE_ID}`;
@@ -183,11 +200,27 @@ export default defineComponent({
         .send(serviceID, templateID, data, publicKey)
         .then((r) => {
           if (r.status === 200) {
-            // console.log("success");
+            this.alert.msg = "Mail successfully sent.";
+            this.alert.type = "success";
+          } else {
+            this.alert.msg = "Something went wrong please retry.";
+            this.alert.type = "error";
           }
+
+          this.alert.display = true;
+          this.sending = false;
+          setTimeout(() => {
+            this.alert.display = false;
+          }, 5000);
         })
         .catch(() => {
-          // console.log("error");
+          this.alert.msg = "Something went wrong please retry.";
+          this.alert.type = "error";
+          this.alert.display = true;
+          this.sending = false;
+          setTimeout(() => {
+            this.alert.display = false;
+          }, 5000);
         });
     },
     check(): boolean {
