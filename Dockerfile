@@ -11,7 +11,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-# Execute the app
+# Build the app
 RUN npm run build
 
 FROM nginx:alpine
