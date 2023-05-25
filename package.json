@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@vueuse/motion": "^2.0.0-beta.12",
+    "@vueuse/motion": "^2.0.0",
     "daisyui": "^2.51.6",
     "vue": "^3.2.45"
   },
