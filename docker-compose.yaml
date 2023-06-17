@@ -11,7 +11,6 @@ services:
       - "traefik.http.routers.portfolio.rule=Host(`thibault-cne.fr`)"
       - "traefik.http.routers.portfolio.entrypoints=websecure"
       - "traefik.http.routers.portfolio.tls.certresolver=myresolver"
-      - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
       - "traefik.docker.network=traefik_traefik"
     networks:
       - traefik

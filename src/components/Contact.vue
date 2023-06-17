@@ -2,7 +2,9 @@
   <div class="w-full relative">
     <div
       class="absolute p-10 transition-transform duration-150 ease-in-out right-0 z-10"
-      :class="[alert.display ? 'translate-x-0' : 'translate-x-[150%]']"
+      :class="[
+        alert.display ? 'block translate-x-0' : 'hidden translate-x-[150%]',
+      ]"
     >
       <Alert :msg="alert.msg" :type="alert.type" />
     </div>

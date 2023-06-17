@@ -14,10 +14,8 @@ export default defineComponent({
 
 <template>
   <div class="flex flex-col">
-    <div>
-      <Navbar />
-      <Hero />
-    </div>
+    <Navbar />
+    <Hero />
     <SectionWrapper component="About" id="about" h />
     <SectionWrapper component="Techs" id="techs" h />
     <SectionWrapper component="Projects" id="projects" h />

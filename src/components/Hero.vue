@@ -12,7 +12,7 @@
         duration: 200,
       },
     }"
-    class="relative w-full h-screen mx-auto"
+    class="w-full h-screen mx-auto"
     id="hero"
   >
     <div
