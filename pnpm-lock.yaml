@@ -20,8 +20,8 @@ dependencies:
 
 devDependencies:
   '@skeletonlabs/skeleton':
-    specifier: ^1.0.0
-    version: 1.0.0
+    specifier: ^2.1.0
+    version: 2.1.0(svelte@3.57.0)
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
     version: 2.0.0(@sveltejs/kit@1.13.0)
@@ -362,9 +362,12 @@ packages:
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
 
-  /@skeletonlabs/skeleton@1.0.0:
-    resolution: {integrity: sha512-xgH9NInf0md1FHr7BBSb8u8SsOOhC7fkSXhCcm1FVqaVBcVkd2/eLZhB1WFtmLB1lha1cteR+/jFN+/ZpviSBw==}
+  /@skeletonlabs/skeleton@2.1.0(svelte@3.57.0):
+    resolution: {integrity: sha512-i+H67MTo9w3BP8dqr0l9qjVWmxEDwLyTqif/+pTmTOpAZpV/B3wqHShtoh0sxminUBSncE3bsNdn694B+6zUnw==}
+    peerDependencies:
+      svelte: ^3.56.0 || ^4.0.0
     dependencies:
+      esm-env: 1.0.0
       svelte: 3.57.0
     dev: true
 
