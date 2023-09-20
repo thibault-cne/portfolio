@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	/* Reference name */
+	font-family: 'JetBrainsMono';
+	/* For multiple files use commas, ex: url(), url(), ... */
+	src: url('/fonts/JetBrainsMono-Regular.ttf');
+}
+
+:root [data-theme='skeleton'] {
+	--theme-font-family-base: 'JetBrainsMono', sans-serif;
+	--theme-font-family-heading: 'JetBrainsMono', sans-serif;
+}
