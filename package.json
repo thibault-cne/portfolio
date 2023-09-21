@@ -39,7 +39,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@emailjs/browser": "^3.10.0",
+		"@emailjs/browser": "^3.11.0",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"daisyui": "^3.7.6",
 		"svelte-motion": "^0.11.5"
