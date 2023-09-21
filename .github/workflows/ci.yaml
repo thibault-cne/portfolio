@@ -29,13 +29,17 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: '${{ github.actor }}'
           password: ${{ secrets.GIT_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           context: .
           platforms: linux/arm64
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
+          secrets: |
+            "VITE_SERVICE_ID=${{ secrets.SERVICE_ID }}"
+            "VITE_TEMPLATE_ID=${{ secrets.TEMPLATE_ID }}"
+            "VITE_PUBLIC_KEY=9-${{ secrets.PUBLIC_KEY }}"
