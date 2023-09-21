@@ -58,7 +58,7 @@
 	class="h-screen w-full bg-brand bg-center bg-no-repeat bg-[length:105%_105%] flex py-28 justify-center items-center transition-all duration-75 sticky top-0"
 >
 	<div class="space-y-10 text-center">
-		<h2 class="font-bold text-2xl">Hi, I'm Thibault Cheneviere.</h2>
+		<h2 class="font-bold text-2xl md:text-4xl">Hi, I'm Thibault Cheneviere.</h2>
 		<!-- Animated Logo -->
 		<figure>
 			<section class="img-bg" />
