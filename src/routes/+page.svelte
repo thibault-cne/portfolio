@@ -3,11 +3,12 @@
 	import { Motion } from 'svelte-motion';
 	import Typewriter from 'svelte-typewriter';
 	import emailjs from '@emailjs/browser';
-	import { toastStore } from '@skeletonlabs/skeleton';
+	import { getToastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 
 	import { techs } from '$lib/constants/techs';
 
+	const toastStore = getToastStore();
 	const publicKey = `${import.meta.env.VITE_PUBLIC_KEY}`;
 	const templateID = `${import.meta.env.VITE_TEMPLATE_ID}`;
 	const serviceID = `${import.meta.env.VITE_SERVICE_ID}`;
@@ -57,7 +58,7 @@
 	class="h-screen w-full bg-brand bg-center bg-no-repeat bg-[length:105%_105%] flex py-28 justify-center items-center transition-all duration-75 sticky top-0"
 >
 	<div class="space-y-10 text-center">
-		<h2 class="font-bold">Hi, I'm Thibault Cheneviere.</h2>
+		<h2 class="font-bold text-2xl">Hi, I'm Thibault Cheneviere.</h2>
 		<!-- Animated Logo -->
 		<figure>
 			<section class="img-bg" />
@@ -236,7 +237,7 @@
 		>
 			Technologies used
 		</div>
-		<div class="font-display font-bold text-neutral-900 text-4xl md:text-4xl mb-8">What I use</div>
+		<div class="font-display font-bold text-neutral-900 text-2xl md:text-4xl mb-8">What I use</div>
 	</div>
 </section>
 <!-- Technologies section -->
@@ -295,7 +296,7 @@
 		>
 			My projects
 		</div>
-		<div class="font-display font-bold text-neutral-900 text-4xl md:text-4xl mb-8">
+		<div class="font-display font-bold text-neutral-900 text-2xl md:text-4xl mb-8">
 			What I've done
 		</div>
 	</div>
@@ -631,7 +632,7 @@
 		>
 			Contact
 		</div>
-		<div class="font-display font-bold text-neutral-900 text-4xl md:text-4xl mb-8">
+		<div class="font-display font-bold text-neutral-900 text-2xl md:text-4xl mb-8">
 			How to contact me
 		</div>
 	</div>
