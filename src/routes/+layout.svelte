@@ -33,7 +33,6 @@
 							href="thibault_cheneviere_resume.pdf"
 							target="_blank"
 							rel="noreferrer"
-							download="thibault_cheneviere_resume.pdf"
 						>
 							Resume
 						</a>

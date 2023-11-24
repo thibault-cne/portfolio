@@ -6,7 +6,7 @@
 	import { getToastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 
-	import { techs } from '$lib/constants/techs';
+	import { lang, tools } from '$lib/constants/techs';
 
 	const toastStore = getToastStore();
 	const publicKey = `${import.meta.env.VITE_PUBLIC_KEY}`;
@@ -66,6 +66,7 @@
 				<img
 					use:motion
 					src="logo.jpg"
+					rel="preload"
 					alt="Thibault"
 					class="rounded-full h-80 w-80 md:h-96 md:w-96 self-center"
 				/>
@@ -143,15 +144,16 @@
 					<span class="text-4xl font-mono uppercase">Problem Solver</span>
 					<span class="text-4xl font-mono uppercase">Explorer</span>
 					<span class="text-4xl font-mono uppercase">Fast learner</span>
+					<span class="text-4xl font-mono uppercase">F1 enjoyer</span>
 				</Typewriter>
 				<p class="text-neutrals-50/60 leading-relaxed max-w-prose mt-4 text-slate-400">
 					Hi, I'm Thibault Cheneviere, a passionate developer who loves crafting beautiful and
-					efficient software. With years of experience in coding and a solid understanding of
+					efficient softwares. With years of experience in coding and a solid understanding of
 					different programming languages and frameworks, I'm always eager to take on new challenges
 					and learn from them. Whether I'm working on a complex backend architecture or a sleek
 					frontend interface, my goal is to deliver top-notch solutions that exceed expectations.
-					When I'm not coding, you can find me playing my favorite video games or doing sport. Let's
-					connect and bring your ideas to life!
+					When I'm not coding, you can find me playing my favorite video games or doing any kind of
+					sport. Let's connect and bring your ideas to life!
 				</p>
 				<!-- Insert a div on small devices for socials -->
 				<div class="flex flex-row justify-center md:hidden mt-4">
@@ -267,24 +269,50 @@
 			</div>
 		</a>
 	</div>
-	<div class="mx-auto w-10/12 2xl:w-[80%] h-full">
-		<div class="flex flex-col md:flex-row h-full w-full justify-center">
+	<div class="mx-auto w-10/12 2xl:w-[80%] h-full xl:min-h-screen">
+		<div class="flex flex-col h-full w-full items-center">
 			<!-- Add a cloud of technologies -->
-			<div class="grid justify-center grid-cols-5">
-				{#each techs as tech}
+			<div
+				class="p-5 text-center xl:mt-0 font-display font-bold text-neutrals-50/60 text-slate-400 text-2xl md:text-4xl"
+			>
+				Languages
+			</div>
+			<div class="flex flex-row gap-1 flex-wrap max-w-xl justify-center">
+				{#each lang as l}
 					<Motion whileHover={{ scale: 1.8 }} initial={{ borderRadius: 25 }} let:motion>
 						<a
-							title={tech.alt}
+							title={l.alt}
 							use:motion
-							href={tech.link}
+							href={l.link}
 							target="_blank"
 							class="flex flex-col items-center justify-center m-2 md:m-4"
 						>
-							<img class="h-16 w-16" src={tech.src} alt={tech.alt} />
+							<img class="h-16 w-16" src={l.src} alt={l.alt} loading="lazy" />
 						</a>
 					</Motion>
 				{/each}
 			</div>
+			<div
+				class="p-10 text-center font-display font-bold text-neutrals-50/60 text-slate-400 text-2xl md:text-4xl"
+			>
+				Frameworks & Tools
+			</div>
+			<div class="flex flex-row gap-1 flex-wrap max-w-xl justify-center">
+				{#each tools as tool}
+					<Motion whileHover={{ scale: 1.8 }} initial={{ borderRadius: 25 }} let:motion>
+						<a
+							title={tool.alt}
+							use:motion
+							href={tool.link}
+							target="_blank"
+							class="flex flex-col items-center justify-center m-2 md:m-4"
+						>
+							<img class="h-16 w-16" src={tool.src} alt={tool.alt} loading="lazy" />
+						</a>
+					</Motion>
+				{/each}
+			</div>
+			<div class="p-12 xl:p-0" />
 		</div>
 	</div>
 </section>
@@ -307,7 +335,7 @@
 	class="w-full flex items-center bg-neutrals-900 xl:pt-0 pt-16 pb-28 relative z-10 xl:min-h-screen flex-col md:flex-row bg-slate-900"
 	aria-label="Projects"
 >
-	<div class="flex justify-center space-x-2 absolute xl:bottom-32 bottom-10 heartbeat w-full z-10">
+	<div class="flex justify-center space-x-2 absolute bottom-10 heartbeat w-full z-10">
 		<!-- Scroll buttons with arrows -->
 		<a href="#contact" class="btn btn-sm variant-ghost-surface h-12 w-12">
 			<div class="flex flex-col items-center">
@@ -330,9 +358,9 @@
 	</div>
 
 	<!-- Project list -->
-	<div class="grid justify-items-center">
+	<div class="flex justify-center w-full lg:mt-10">
 		<ul class="w-4/5 group/list">
-			<li class="mb-12">
+			<li class="mb-12 max-w-5xl">
 				<div
 					class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
 				>
@@ -367,7 +395,7 @@
 								</span>
 							</a>
 						</h3>
-						<p class="mt-2 text-sm leading-normal">
+						<p class="text-neutrals-50/60 leading-snug max-w-prose mt-4 text-slate-400">
 							An ARMv7 Tiger compiler written in Golang. It was first developped in Java for a
 							school projects. It was a 4 team project and you can find the Java source code <a
 								href="https://github.com/ElFamos0/pcl">here</a
@@ -381,7 +409,12 @@
 								target="_blank"
 								class="flex flex-col items-center justify-center m-4"
 							>
-								<img class="h-12 w-12" src="https://skillicons.dev/icons?i=docker" alt="docker" />
+								<img
+									class="h-12 w-12"
+									src="https://skillicons.dev/icons?i=docker"
+									alt="docker"
+									loading="lazy"
+								/>
 							</a>
 							<a
 								title="golang"
@@ -389,7 +422,12 @@
 								target="_blank"
 								class="flex flex-col items-center justify-center m-4"
 							>
-								<img class="h-12 w-12" src="https://skillicons.dev/icons?i=go" alt="golang" />
+								<img
+									class="h-12 w-12"
+									src="https://skillicons.dev/icons?i=go"
+									alt="golang"
+									loading="lazy"
+								/>
 							</a>
 						</div>
 					</div>
@@ -406,7 +444,7 @@
 					/>
 				</div>
 			</li>
-			<li class="mb-12">
+			<li class="mb-12 max-w-5xl">
 				<div
 					class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
 				>
@@ -441,7 +479,7 @@
 								</span>
 							</a>
 						</h3>
-						<p class="mt-2 text-sm leading-normal">
+						<p class="text-neutrals-50/60 leading-snug max-w-prose mt-4 text-slate-400">
 							A find like function written in C. It was a school project made for learning linux
 							file system but it is developped to work on windows too. It has github actions to test
 							on push and works as a CLI with several options.
@@ -453,7 +491,12 @@
 								target="_blank"
 								class="flex flex-col items-center justify-center m-4"
 							>
-								<img class="h-12 w-12" src="https://skillicons.dev/icons?i=c" alt="c" />
+								<img
+									class="h-12 w-12"
+									src="https://skillicons.dev/icons?i=c"
+									alt="c"
+									loading="lazy"
+								/>
 							</a>
 							<a
 								title="github"
@@ -461,7 +504,12 @@
 								target="_blank"
 								class="flex flex-col items-center justify-center m-4"
 							>
-								<img class="h-12 w-12" src="https://skillicons.dev/icons?i=github" alt="c" />
+								<img
+									class="h-12 w-12"
+									src="https://skillicons.dev/icons?i=github"
+									alt="c"
+									loading="lazy"
+								/>
 							</a>
 						</div>
 					</div>
@@ -478,7 +526,7 @@
 					/>
 				</div>
 			</li>
-			<li class="mb-12">
+			<li class="mb-12 max-w-5xl">
 				<div
 					class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
 				>
@@ -510,7 +558,7 @@
 								</span>
 							</a>
 						</h3>
-						<p class="mt-2 text-sm leading-normal">
+						<p class="text-neutrals-50/60 leading-snug max-w-prose mt-4 text-slate-400">
 							An implementation of the find function written in Rust. This is a personnal project
 							started to learn Rust. I'm still working on it and keep implementing new features.
 						</p>
@@ -521,7 +569,12 @@
 								target="_blank"
 								class="flex flex-col items-center justify-center m-4"
 							>
-								<img class="h-12 w-12" src="https://skillicons.dev/icons?i=rust" alt="rust" />
+								<img
+									class="h-12 w-12"
+									src="https://skillicons.dev/icons?i=rust"
+									alt="rust"
+									loading="lazy"
+								/>
 							</a>
 						</div>
 					</div>
@@ -538,7 +591,7 @@
 					/>
 				</div>
 			</li>
-			<li class="mb-12">
+			<li class="mb-12 max-w-5xl">
 				<div
 					class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
 				>
@@ -573,7 +626,7 @@
 								</span>
 							</a>
 						</h3>
-						<p class="mt-2 text-sm leading-normal">
+						<p class="text-neutrals-50/60 leading-snug max-w-prose mt-4 text-slate-400">
 							A web maze game. This is a web game written in Rust and Svelte. I'm still working on
 							it to develop the multiplayer part of the game.
 						</p>
@@ -584,7 +637,12 @@
 								target="_blank"
 								class="flex flex-col items-center justify-center m-4"
 							>
-								<img class="h-12 w-12" src="https://skillicons.dev/icons?i=rust" alt="rust" />
+								<img
+									class="h-12 w-12"
+									src="https://skillicons.dev/icons?i=rust"
+									alt="rust"
+									loading="lazy"
+								/>
 							</a>
 							<a
 								title="svelte"
@@ -592,7 +650,12 @@
 								target="_blank"
 								class="flex flex-col items-center justify-center m-4"
 							>
-								<img class="h-12 w-12" src="https://skillicons.dev/icons?i=svelte" alt="svelte" />
+								<img
+									class="h-12 w-12"
+									src="https://skillicons.dev/icons?i=svelte"
+									alt="svelte"
+									loading="lazy"
+								/>
 							</a>
 						</div>
 					</div>
