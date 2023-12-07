@@ -34,7 +34,7 @@
 		"svelte-typewriter": "^3.2.2",
 		"tailwindcss": "^3.3.5",
 		"tslib": "^2.6.2",
-		"typescript": "^5.3.2",
+		"typescript": "^5.3.3",
 		"vite": "^4.5.0"
 	},
 	"type": "module",
