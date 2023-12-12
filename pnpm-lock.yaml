@@ -15,8 +15,8 @@ dependencies:
     specifier: ^4.4.17
     version: 4.4.17(postcss@8.4.31)
   svelte-motion:
-    specifier: ^0.11.5
-    version: 0.11.5(svelte@4.2.7)
+    specifier: ^0.12.0
+    version: 0.12.0(svelte@4.2.7)
 
 devDependencies:
   '@skeletonlabs/skeleton':
@@ -549,8 +549,8 @@ packages:
     resolution: {integrity: sha512-Sk/uYFOBAB7mb74XcpizmH0KOR2Pv3D2Hmrh1Dmy5BmK3MpdSa5kqZcg6EKBdklU0bFXX9gCfzvpnyUehrPIuA==}
     dev: true
 
-  /@types/react@17.0.71:
-    resolution: {integrity: sha512-lfqOu9mp16nmaGRrS8deS2Taqhd5Ih0o92Te5Ws6I1py4ytHBcXLqh0YIqVsViqwVI5f+haiFM6hju814BzcmA==}
+  /@types/react@18.2.43:
+    resolution: {integrity: sha512-nvOV01ZdBdd/KW6FahSbcNplt2jCJfyWdTos61RYHV+FVv5L/g9AOX1bmbVcWcLFL8+KHQfh1zVIQrud6ihyQA==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -2149,12 +2149,12 @@ packages:
     dependencies:
       svelte: 4.2.7
 
-  /svelte-motion@0.11.5(svelte@4.2.7):
-    resolution: {integrity: sha512-xTfh7xHL2E8CsqbjU88PpiXPzexQs8s12eb2KEmW2pX9b5tD4REZiaA4hcmF/NwttbrGD7C0h3ZoRUTI5hA50A==}
+  /svelte-motion@0.12.0(svelte@4.2.7):
+    resolution: {integrity: sha512-ipuQGmNRMHNHxhn7VYll2+XlWR/og5iVWvmIl2TSOErJgOPtE1kvjHhuAmXoqkfFv+hKPeL9eZKKRiWV+8dogw==}
     peerDependencies:
-      svelte: ^3.35.0
+      svelte: '>=3.35.0'
     dependencies:
-      '@types/react': 17.0.71
+      '@types/react': 18.2.43
       framesync: 6.1.2
       popmotion: 11.0.5
       style-value-types: 5.1.2
