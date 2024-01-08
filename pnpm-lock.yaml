@@ -77,8 +77,8 @@ devDependencies:
     specifier: ^3.6.2
     version: 3.6.2(postcss@8.4.31)(svelte@4.2.7)
   svelte-typewriter:
-    specifier: ^3.2.2
-    version: 3.2.2(svelte@4.2.7)
+    specifier: ^3.2.3
+    version: 3.2.3(svelte@4.2.7)
   tailwindcss:
     specifier: ^3.3.5
     version: 3.3.5
@@ -332,6 +332,27 @@ packages:
   /@fastify/busboy@2.1.0:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
+
+  /@formatjs/ecma402-abstract@1.18.0:
+    resolution: {integrity: sha512-PEVLoa3zBevWSCZzPIM/lvPCi8P5l4G+NXQMc/CjEiaCWgyHieUoo0nM7Bs0n/NbuQ6JpXEolivQ9pKSBHaDlA==}
+    dependencies:
+      '@formatjs/intl-localematcher': 0.5.2
+      tslib: 2.6.2
+    dev: true
+
+  /@formatjs/intl-localematcher@0.5.2:
+    resolution: {integrity: sha512-txaaE2fiBMagLrR4jYhxzFO6wEdEG4TPMqrzBAcbr4HFUYzH/YC+lg6OIzKCHm8WgDdyQevxbAAV1OgcXctuGw==}
+    dependencies:
+      tslib: 2.6.2
+    dev: true
+
+  /@formatjs/intl-segmenter@11.5.3:
+    resolution: {integrity: sha512-J7ygJh9dWee26WUptaK4nwd4pZDm7axKRaYqZrc1aXZDQy7Xl+j/PdNkULvWfQTqietcC4iG9dQR5XxR/DFRCw==}
+    dependencies:
+      '@formatjs/ecma402-abstract': 1.18.0
+      '@formatjs/intl-localematcher': 0.5.2
+      tslib: 2.6.2
+    dev: true
 
   /@humanwhocodes/config-array@0.11.13:
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -2210,11 +2231,12 @@ packages:
       typescript: 5.3.2
     dev: true
 
-  /svelte-typewriter@3.2.2(svelte@4.2.7):
-    resolution: {integrity: sha512-JpJCLuL3fjw5R6jR5YQPQERXtxh65fFXBodW1ipde56wspiknteFiNMn+P0T5hhiU561a6DHXhN5ipsFKIB9hg==}
+  /svelte-typewriter@3.2.3(svelte@4.2.7):
+    resolution: {integrity: sha512-762k01kIU+IyXfe5f2MEYQ1yIfJZfueAEmJNbO36cxJG56/vciHiWacPQLnSECK/4cvlH/Ll1Mv6B45InMJ1zg==}
     peerDependencies:
       svelte: '>=3.47.x'
     dependencies:
+      '@formatjs/intl-segmenter': 11.5.3
       svelte: 4.2.7
     dev: true
 
