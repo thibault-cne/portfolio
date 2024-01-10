@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@emailjs/browser':
-    specifier: ^3.11.0
-    version: 3.11.0
+    specifier: ^3.12.1
+    version: 3.12.1
   '@sveltejs/adapter-static':
     specifier: ^2.0.3
     version: 2.0.3(@sveltejs/kit@1.27.6)
@@ -111,8 +111,8 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.20
 
-  /@emailjs/browser@3.11.0:
-    resolution: {integrity: sha512-RkY3FKZ3fPdK++OeF46mRTFpmmQWCHUVHZH209P3NE4D5sg2Atg7S2wa3gw5062Gl4clt4Wn5SyC4WhlVZC5pA==}
+  /@emailjs/browser@3.12.1:
+    resolution: {integrity: sha512-C5nK07CgSCFx3onsuRt/ZaaMvIi0T3SHHanM7fKozjSvbZu+OjHHP9W608fYpic0OavF7yIlfy4+lRDO33JdbA==}
     engines: {node: '>=14.0.0'}
     dev: false
 
